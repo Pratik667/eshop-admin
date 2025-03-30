@@ -1,0 +1,72 @@
+/* AddProduct.css */
+
+/* General layout for the page */
+.title-heading {
+    font-size: 22px;
+    /*text-align: center;*/
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Container for the form */
+.product-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* max-width: 500px;
+    margin: 0 auto; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    /* border-radius: 8px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* background-color: #f9f9f9; */
+}
+
+/* Style for text fields */
+.MuiTextField-root {
+    margin-bottom: 15px;
+}
+
+/* Button styles */
+.MuiButton-root {
+    margin: 10px 0;
+}
+
+/* Submit Button */
+.MuiButton-contained {
+    background-color: #4caf50;
+    color: white;
+    &:hover {
+        background-color: #45a049;
+    }
+}
+
+/* Reset Button */
+.MuiButton-outlined {
+    color: #f44336;
+    border-color: #f44336;
+    &:hover {
+        background-color: #f44336;
+        color: white;
+    }
+}
+
+/* Alert messages */
+.MuiAlert-root {    
+    width: 100%;
+    max-width: 500px;
+
+}
+
+form .buttons button{
+    margin: 15px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-form {
+        width: 90%;
+    }
+}

@@ -1,0 +1,22 @@
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+}
+section.all-users button:disabled {
+    display: none;
+}
+.btn-delete{
+    border: 1px solid #e74c3c;
+    background: #e74c3c;
+    margin-left: 10px;
+    color: #fff;
+}
+/* General layout for the page */
+.title-heading {
+    font-size: 22px;
+    /*text-align: center;*/
+    margin-bottom: 20px;
+    color: #333;
+}
