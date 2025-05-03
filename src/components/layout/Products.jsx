@@ -39,6 +39,13 @@ const Products = () => {
   }
   const columns = [
     {
+      name: 'Product Image',
+      selector: row => (<img src={row.image} />),
+      id: 'product-image',
+      sortable: false,
+      width: "120px",
+    },
+    {
       name: 'Name',
       selector: row => row.name,
       id: 'product-name',
@@ -59,18 +66,18 @@ const Products = () => {
       sortable: true,      
     },
     {
-      name: 'Product Image',
-      selector: row => (<img src={row.image} />),
-      id: 'product-image',
-      sortable: false,
-      width: "120px",
-    },
-    {
-      name: 'Date',
-      selector: row => row.createdAt,
-      id: 'product-createdAt',
+      name: 'Event',
+      selector: row => row.event,
+      id: 'event',
       sortable: true,
-      width: "150px",
+      width: "120px",
+    }, 
+    {
+      name: 'Category',
+      selector: row => row.category,
+      id: 'category',
+      sortable: true,
+      width: "120px",
     },
     {
       name: 'Edit',
@@ -139,7 +146,7 @@ const Products = () => {
     // Call edit API here (you can collect updated data from modal fields)
     try {
         const response = await axios.put(`https://ukkh4uvf1d.execute-api.eu-north-1.amazonaws.com/api/products/${selectedProduct._id}`,
-            { name: selectedProduct.name, description: selectedProduct.description, price: selectedProduct.price, image: selectedProduct.image }, {
+            { name: selectedProduct.name, description: selectedProduct.description, price: selectedProduct.price, image: selectedProduct.image, brand: selectedProduct.brand, event: selectedProduct.event, category: selectedProduct.category }, {
             headers: {
                 Authorization: `Bearer ${token}`,  // Attach the token in the Authorization header
             },
@@ -206,6 +213,27 @@ const Products = () => {
                 label="Price"
                 value={selectedProduct?.price || ''}
                 onChange={(e) => setSelectedProduct({ ...selectedProduct, price: e.target.value })}
+                fullWidth
+                margin="dense"
+              />
+               <TextField
+                label="Brand"
+                value={selectedProduct?.brand || ''}
+                onChange={(e) => setSelectedProduct({ ...selectedProduct, brand: e.target.value })}
+                fullWidth
+                margin="dense"
+              />
+               <TextField
+                label="Event"
+                value={selectedProduct?.event || ''}
+                onChange={(e) => setSelectedProduct({ ...selectedProduct, event: e.target.value })}
+                fullWidth
+                margin="dense"
+              />
+               <TextField
+                label="Category"
+                value={selectedProduct?.category || ''}
+                onChange={(e) => setSelectedProduct({ ...selectedProduct, category: e.target.value })}
                 fullWidth
                 margin="dense"
               />

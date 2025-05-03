@@ -8,13 +8,17 @@ const AddProduct = () => {
         name: '',
         description: '',
         price: '',
-        image: ''
+        image: '',
+        brand: '',
+        category: '',
+        event: '',
     });
     const [errors, setErrors] = useState({
         name: '',
         description: '',
         price: '',
-        image: ''
+        image: '',
+        category: '',
     });
     const [status, setStatus] = useState(null);
     const [openDialog, setOpenDialog] = useState(false); // To manage dialog visibility
@@ -38,6 +42,10 @@ const AddProduct = () => {
         }
         if (!formData.image) {
             formErrors.image = "Image URL is required";
+            valid = false;
+        }
+        if (!formData.category) {
+            formErrors.category = "Category is required";
             valid = false;
         }
 
@@ -70,13 +78,17 @@ const AddProduct = () => {
                             name: '',
                             description: '',
                             price: '',
-                            image: ''
+                            image: '',
+                            brand: '',
+                            category: '',
+                            event: ''
                         });
                         setErrors({
                             name: '',
                             description: '',
                             price: '',
-                            image: ''
+                            image: '',
+                            category: ''
                         });
                         setTimeout(() => {                        
                             setStatus(null);
@@ -101,15 +113,19 @@ const AddProduct = () => {
         if (confirmed) {
             setFormData({
                 name: '',
-                description: '',
-                price: '',
-                image: ''
+                            description: '',
+                            price: '',
+                            image: '',
+                            brand: '',
+                            category: '',
+                            event: ''
             });
             setErrors({
                 name: '',
                 description: '',
                 price: '',
-                image: ''
+                image: '',
+                category: ''
             });
             setStatus(null);
         }
@@ -150,6 +166,32 @@ const AddProduct = () => {
                         margin="dense"
                         error={!!errors.price}
                         helperText={errors.price}
+                    />
+                     <TextField
+                        label="Brand"
+                        name="brand"
+                        value={formData.brand}
+                        onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
+                        fullWidth
+                        margin="dense"                        
+                    />
+                     <TextField
+                        label="Category"
+                        name="category"
+                        value={formData.category}
+                        onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                        fullWidth
+                        margin="dense"
+                        error={!!errors.category}
+                        helperText={errors.category}
+                    />
+                     <TextField
+                        label="Event"
+                        name="event"
+                        value={formData.event}
+                        onChange={(e) => setFormData({ ...formData, event: e.target.value })}
+                        fullWidth
+                        margin="dense"                        
                     />
                     <TextField
                         label="Image"

@@ -12,7 +12,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-layout">
       <nav className={`sidebar ${isSidebarOpen ? 'open' : ''} flex items-center space-x-4 lg:space-x-6 mx-6`}>
-        <AppSidebar/>
+        <AppSidebar toggleSidebar={toggleSidebar}/>
       </nav>
       <div className={`content ${isSidebarOpen ? 'shifted' : ''}`}>
         <button className="toggle-btn" onClick={toggleSidebar}>
