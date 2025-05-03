@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #55efc4, #81ecec);
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
   }
   /* Login Container */
   .login-container {
